@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neymar Jr · Fan Site</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Tributo não oficial à trajetória do Neymar Jr, da Vila Belmiro ao mundo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#fedd00; --green:#009c3b; --blue:#002776;
+  --bg:#0b0d0b; --bg2:#121512; --ink:#f3f1e8; --muted:#9aa197; --line:rgba(243,241,232,.12);
+  color-scheme:dark;
+  --display:'Oswald',Impact,sans-serif; --body:'Space Grotesk',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#000}
+a{color:inherit}
+.mono{font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.wrap{width:min(1240px,100%);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(16px,3vw,40px);mix-blend-mode:difference}
+nav .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.02em;text-transform:uppercase}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a{text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:720px){nav ul{display:none}}
+
+/* HERO */
+#hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:radial-gradient(120% 80% at 50% 30%,#1c241c 0%,var(--bg) 70%)}
+#hero canvas{position:absolute;inset:0;z-index:1;width:100%!important;height:100%!important;display:block}
+.hero-name{position:absolute;left:0;right:0;bottom:6vh;z-index:0;pointer-events:none;text-align:center}
+.hero-name h1{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.82;font-size:clamp(84px,19vw,300px);letter-spacing:-.01em;color:transparent;-webkit-text-stroke:2px var(--accent)}
+.hero-name h1 span{color:var(--accent);-webkit-text-stroke:0}
+.hero-meta{position:absolute;z-index:3;top:84px;left:clamp(16px,3vw,40px);display:grid;gap:10px}
+.hero-meta .id{font-family:var(--display);font-size:15px;letter-spacing:.2em;color:var(--accent)}
+.flag{width:42px;height:30px;display:block}
+.hero-side{position:absolute;z-index:3;top:84px;right:clamp(16px,3vw,40px);text-align:right;display:grid;gap:6px}
+.hero-side b{font-family:var(--display);font-size:64px;line-height:1;color:var(--accent)}
+.hint{position:absolute;z-index:3;left:50%;transform:translateX(-50%);top:84px}
+@media(max-width:720px){.hint{display:none}.hero-side b{font-size:44px}}
+
+/* SECTION HEADINGS */
+section{position:relative;padding:clamp(80px,12vw,160px) 0}
+.h2{font-family:var(--display);text-transform:uppercase;font-weight:700;line-height:.86;font-size:clamp(56px,11vw,168px);letter-spacing:-.01em}
+.h2 .l2{display:block;color:transparent;-webkit-text-stroke:1.5px var(--ink);padding-left:clamp(24px,8vw,140px)}
+.h2 .l1{display:block}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(40px,6vw,80px);flex-wrap:wrap}
+.sec-head p{max-width:380px;color:var(--muted);line-height:1.55}
+.reveal{opacity:1;transform:translateY(24px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.stat{padding:28px 20px 32px 0;border-bottom:1px solid var(--line)}
+.stat + .stat{padding-left:20px;border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--display);font-size:clamp(56px,7vw,104px);line-height:1;color:var(--accent)}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:14px;line-height:1.4}
+@media(max-width:820px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0;padding-left:0}}
+
+/* MAP */
+#mapa{background:var(--bg2)}
+.map-box{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#0d100d}
+#map{display:block;width:100%;height:auto}
+.legs{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.leg{background:#0d100d;padding:18px 16px}
+.leg i{font-style:normal;font-family:var(--display);color:var(--accent);font-size:13px;letter-spacing:.14em}
+.leg b{display:block;font-family:var(--display);font-size:24px;text-transform:uppercase;margin:4px 0 2px}
+.leg span{color:var(--muted);font-size:13px}
+@media(max-width:820px){.legs{grid-template-columns:1fr 1fr}}
+
+/* TIMELINE */
+.tl{position:relative}
+.tl::before{content:"";position:absolute;left:120px;top:0;bottom:0;width:1px;background:linear-gradient(var(--accent),var(--green))}
+.item{display:grid;grid-template-columns:120px 1fr 280px;gap:0 40px;padding:36px 0;align-items:start;position:relative}
+.item::before{content:"";position:absolute;left:115px;top:48px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.item .yr{font-family:var(--display);font-size:40px;line-height:1;color:var(--accent)}
+.item h3{font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,3vw,40px);line-height:1;margin-bottom:12px;padding-left:20px}
+.item p{color:var(--muted);line-height:1.6;max-width:520px;padding-left:20px}
+.ph{aspect-ratio:4/3;border:1px dashed rgba(254,221,0,.35);border-radius:3px;display:grid;place-items:center;text-align:center;padding:12px;background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(0,156,59,.07) 10px 20px);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph small{font-size:11px;color:var(--muted);letter-spacing:.08em;line-height:1.5}
+@media(max-width:820px){
+  .tl::before{left:6px}.item{grid-template-columns:1fr;padding-left:30px;gap:10px}.item::before{left:1px;top:44px}
+  .item h3,.item p{padding-left:0}.ph{margin-top:8px}
+}
+
+/* OUSADIA */
+#ousadia{overflow:hidden}
+.ou-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:center}
+.manifesto{font-size:clamp(20px,2.2vw,28px);line-height:1.45}
+.manifesto em{font-style:normal;color:var(--accent)}
+.ht{position:relative;aspect-ratio:850/1173;border-radius:4px;overflow:hidden;background:var(--green)}
+.ht canvas{width:100%;height:100%;display:block}
+.marquee{margin-top:clamp(60px,8vw,110px);border-block:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.marquee div{display:inline-block;font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,6vw,88px);padding:14px 0;animation:mq 26s linear infinite}
+.marquee span{color:var(--accent)} .marquee s{text-decoration:none;color:transparent;-webkit-text-stroke:1px var(--ink)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(max-width:820px){.ou-grid{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:48px 0 60px;color:var(--muted);font-size:13px;line-height:1.7}
+footer .cols{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+footer h4{font-family:var(--display);text-transform:uppercase;color:var(--ink);font-size:16px;letter-spacing:.06em;margin-bottom:8px}
+#credits li{list-style:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.marquee div{animation:none}}
+</style>
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">nj·10</div>
+  <ul>
+    <li><a href="#jogada">a jogada</a></li>
+    <li><a href="#mapa">da vila</a></li>
+    <li><a href="#vila">timeline</a></li>
+    <li><a href="#ousadia">ousadia</a></li>
+  </ul>
+</nav>
+
+<header id="hero">
+  <canvas id="heroCanvas" aria-label="Retrato 3D do Neymar Jr com a camisa da Seleção"></canvas>
+  <div class="hero-meta">
+    <span class="id">player_010</span>
+    <svg class="flag" viewBox="0 0 70 50" aria-label="Bandeira do Brasil"><rect width="70" height="50" fill="#009c3b"/><path d="M35 6 64 25 35 44 6 25z" fill="#fedd00"/><circle cx="35" cy="25" r="10.5" fill="#002776"/><path d="M25 23.5q10-3 20 3" stroke="#fff" stroke-width="1.8" fill="none"/></svg>
+    <span class="mono">Seleção Brasileira<br>Santos FC</span>
+  </div>
+  <div class="hero-side">
+    <span class="mono">camisa</span>
+    <b>10</b>
+    <span class="mono">atacante</span>
+  </div>
+  <span class="hint mono">passe o mouse ↓</span>
+  <div class="hero-name"><h1>neymar <span>jr</span></h1></div>
+</header>
+
+<main>
+<section id="jogada">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="h2"><span class="l1">a jogada</span><span class="l2">do 10</span></h2>
+      <p>Drible, passe e gol. Os números de quem virou o maior artilheiro da história da Seleção Brasileira.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b data-count="79">0</b><span>gols pela Seleção, recorde histórico</span></div>
+      <div class="stat"><b data-count="128">0</b><span>jogos com a amarelinha</span></div>
+      <div class="stat"><b data-count="4">0</b><span>Copas do Mundo convocado (2014 a 2026)</span></div>
+      <div class="stat"><b data-count="2016">0</b><span>ouro olímpico no Maracanã</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="mapa">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="h2"><span class="l1">da vila</span><span class="l2">ao mundo</span></h2>
+      <p>Saiu da Baixada Santista, rodou Europa e Oriente Médio e voltou pra casa.</p>
+    </div>
+    <div class="map-box reveal">
+      <canvas id="map" width="1200" height="560" aria-label="Mapa da carreira: Santos, Barcelona, Paris, Riad e volta a Santos"></canvas>
+      <div class="legs">
+        <div class="leg"><i>2009</i><b>Santos</b><span>estreia profissional</span></div>
+        <div class="leg"><i>2013</i><b>Barcelona</b><span>trio com Messi e Suárez</span></div>
+        <div class="leg"><i>2017</i><b>Paris</b><span>PSG, venda recorde</span></div>
+        <div class="leg"><i>2023</i><b>Riad</b><span>Al-Hilal</span></div>
+        <div class="leg"><i>2025</i><b>Santos</b><span>a volta pra Vila</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vila">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="h2"><span class="l1">direto da</span><span class="l2">vila</span></h2>
+      <p>Uma linha do tempo do menino de Mogi das Cruzes ao camisa 10 do Brasil.</p>
+    </div>
+    <div class="tl" id="timeline"></div>
+  </div>
+</section>
+
+<section id="ousadia">
+  <div class="wrap">
+    <div class="ou-grid">
+      <div class="reveal">
+        <h2 class="h2" style="margin-bottom:40px"><span class="l1">ousadia</span><span class="l2">e alegria</span></h2>
+        <p class="manifesto">Lambreta, elástico, caneta. O futebol brasileiro sempre foi sobre <em>jogar sorrindo</em>, e poucos levaram isso tão longe quanto o garoto que saiu da <em>Vila Belmiro</em> pra jogar nos maiores palcos do mundo.</p>
+      </div>
+      <div class="ht reveal"><canvas id="ht" aria-label="Retrato em retícula amarela e verde"></canvas></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <h4>Neymar Jr · fan site</h4>
+      <p>Tributo não oficial, feito por fã.<br>Sem vínculo com o atleta, a CBF ou o Santos FC.</p>
+    </div>
+    <div>
+      <h4>Créditos das imagens</h4>
+      <ul id="credits"><li>Carregando…</li></ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/vendor/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"./assets/vendor/three.module.js"}}</script>
+
+<script>
+/* ---------- conteúdo ---------- */
+const TIMELINE = [
+  {y:2003, t:"Base do Santos", d:"Aos 11 anos, entra nas categorias de base do Santos e começa a chamar atenção pelo drible.", img:"assets/timeline/2003.jpg"},
+  {y:2009, t:"Estreia profissional", d:"Sobe ao time principal do Santos com 17 anos e faz o primeiro gol como profissional semanas depois.", img:"assets/timeline/2009.jpg"},
+  {y:2011, t:"Libertadores pelo Santos", d:"Comanda o Santos no título da Copa Libertadores, o terceiro da história do clube.", img:"assets/timeline/2011.jpg"},
+  {y:2013, t:"Confederações e Barcelona", d:"Melhor jogador da Copa das Confederações vencida pelo Brasil e transferência para o Barcelona.", img:"assets/timeline/2013.jpg"},
+  {y:2015, t:"Champions com o Barça", d:"Forma o trio MSN com Messi e Suárez e conquista a Liga dos Campeões da Europa.", img:"assets/timeline/2015.jpg"},
+  {y:2016, t:"Ouro olímpico no Rio", d:"Bate o pênalti decisivo no Maracanã e dá ao Brasil o primeiro ouro olímpico no futebol masculino.", img:"assets/timeline/2016.jpg"},
+  {y:2017, t:"Paris Saint-Germain", d:"Vai para o PSG na transferência mais cara da história do futebol.", img:"assets/timeline/2017.jpg"},
+  {y:2023, t:"Maior artilheiro da Seleção", d:"Passa Pelé e chega a 79 gols pelo Brasil. No mesmo ano, se transfere para o Al-Hilal.", img:"assets/timeline/2023.jpg"},
+  {y:2025, t:"De volta à Vila", d:"Retorna ao Santos, o clube que o revelou.", img:"assets/timeline/2025.jpg"},
+  {y:2026, t:"Convocado para a 4ª Copa", d:"Chamado por Ancelotti para a Copa do Mundo dos EUA, México e Canadá.", img:"assets/timeline/2026.jpg"}
+];
+const tl = document.getElementById('timeline');
+function renderTimeline(fotos){
+  tl.innerHTML='';
+  TIMELINE.forEach(e=>{
+    const f=fotos.find(c=>c.ano===e.y);
+    const el=document.createElement('article'); el.className='item reveal';
+    el.innerHTML=`<div class="yr">${e.y}</div><div><h3>${e.t}</h3><p>${e.d}</p></div>
+    <div class="ph">${f ? `<img src="${f.arquivo}" alt="${e.t}" loading="lazy">` : `<small>foto livre do Wikimedia Commons<br>salve em assets/timeline/ e registre em creditos.json</small>`}</div>`;
+    tl.appendChild(el); io.observe(el);
+  });
+}
+document.getElementById('mq').innerHTML = ('<span>ousadia</span> · <s>alegria</s> · <span>drible</span> · <s>caneta</s> · ').repeat(6);
+
+/* ---------- Lenis + reveals ---------- */
+let lenis;
+try{ lenis = new Lenis({lerp:.09, smoothWheel:true}); const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)}; requestAnimationFrame(raf);
+  document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();lenis.scrollTo(a.getAttribute('href'),{offset:-40})}));
+}catch(e){}
+const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);
+  en.target.querySelectorAll('[data-count]').forEach(countUp);} }),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+fetch('creditos.json').then(r=>r.json()).catch(()=>[]).then(list=>{
+  renderTimeline(list);
+  const ul=document.getElementById('credits');
+  ul.innerHTML = '<li>Retrato do hero: foto enviada pelo autor do site.</li>' +
+    list.map(c=>`<li>${c.ano}: ${c.autor}, <a href="${c.url}" target="_blank" rel="noopener">${c.licenca}</a></li>`).join('');
+});
+
+function countUp(el){ const to=+el.dataset.count, from=to>1900?1990:0, t0=performance.now();
+  const step=n=>{const k=Math.min(1,(n-t0)/1400), e=1-Math.pow(1-k,4); el.textContent=Math.round(from+(to-from)*e); if(k<1)requestAnimationFrame(step)}; requestAnimationFrame(step); }
+
+/* ---------- mapa pontilhado ---------- */
+(function(){
+  const c=document.getElementById('map'), x=c.getContext('2d'), W=c.width, H=c.height;
+  const P=(lat,lon)=>[ (lon+75)/150*W, (60-lat)/95*H ]; // recorte: lon -75..75, lat 60..-35
+  const pts=[["Santos",-23.96,-46.33],["Barcelona",41.39,2.17],["Paris",48.86,2.35],["Riad",24.71,46.68],["Santos",-23.96,-46.33]];
+  let t0=null;
+  function arc(a,b,k){ const [x1,y1]=a,[x2,y2]=b, mx=(x1+x2)/2, my=Math.min(y1,y2)-Math.hypot(x2-x1,y2-y1)*.28;
+    x.beginPath(); for(let i=0;i<=60*k;i++){const t=i/60,u=1-t; x.lineTo(u*u*x1+2*u*t*mx+t*t*x2, u*u*y1+2*u*t*my+t*t*y2)} x.stroke(); }
+  function draw(now){
+    if(!t0) t0=now; const T=((now-t0)/1000)%9;
+    x.clearRect(0,0,W,H);
+    x.fillStyle='rgba(243,241,232,.10)';
+    for(let i=12;i<W;i+=18) for(let j=12;j<H;j+=18) x.fillRect(i,j,2,2);
+    x.strokeStyle='rgba(243,241,232,.08)'; x.lineWidth=1; const [,eq]=P(0,0); x.beginPath(); x.moveTo(0,eq); x.lineTo(W,eq); x.stroke();
+    x.lineWidth=2.5; x.lineCap='round';
+    for(let s=0;s<4;s++){ const k=Math.max(0,Math.min(1,(T-s*1.6)/1.4)); if(k<=0) continue;
+      x.strokeStyle= s===3 ? '#009c3b' : '#fedd00'; arc(P(pts[s][1],pts[s][2]),P(pts[s+1][1],pts[s+1][2]),k); }
+    pts.slice(0,4).forEach(([n,la,lo],i)=>{ const [px,py]=P(la,lo);
+      x.fillStyle='#fedd00'; x.beginPath(); x.arc(px,py,7,0,7); x.fill();
+      x.strokeStyle='rgba(254,221,0,.35)'; x.lineWidth=1.5; x.beginPath(); x.arc(px,py,7+((T*14+i*9)%24),0,7); x.stroke();
+      x.fillStyle='#f3f1e8'; x.font='600 22px Oswald, sans-serif'; x.fillText(n.toUpperCase(), px+14, py-12); });
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+const loader = new THREE.TextureLoader();
+const load = p => new Promise((res,rej)=>loader.load(p,res,undefined,rej));
+const [diffuse, alpha, depth, normal, overlay] = await Promise.all(
+  ['person-diffuse','person-alpha','person-depth','person-normal','overlay'].map(n=>load(`assets/${n}.webp`)));
+diffuse.colorSpace = THREE.SRGBColorSpace; overlay.colorSpace = THREE.SRGBColorSpace;
+
+/* ---------- HERO 3D ---------- */
+const canvas = document.getElementById('heroCanvas');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, .1, 50);
+camera.position.set(0,0,5.2);
+
+const uni = {
+  uDiffuse:{value:diffuse}, uOverlay:{value:overlay}, uAlpha:{value:alpha}, uDepth:{value:depth}, uNormal:{value:normal},
+  uMouse:{value:new THREE.Vector2(.5,.4)}, uReveal:{value:0}, uTime:{value:0},
+  uAccent:{value:new THREE.Color('#fedd00')}, uGreen:{value:new THREE.Color('#009c3b')}
+};
+const ASP = diffuse.image.width/diffuse.image.height;
+uni.uAspect={value:ASP};
+const geo = new THREE.PlaneGeometry(2*ASP,2,220,250);
+const mat = new THREE.ShaderMaterial({
+  uniforms:uni, transparent:true,
+  vertexShader:`
+    uniform sampler2D uDepth; varying vec2 vUv; varying float vD;
+    void main(){ vUv=uv; float d=texture2D(uDepth,uv).r; vD=d;
+      vec3 p=position; p.z+=d*.42; gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.); }`,
+  fragmentShader:`
+    uniform sampler2D uDiffuse,uAlpha,uNormal,uOverlay; uniform vec2 uMouse; uniform float uReveal,uTime;
+    uniform vec3 uAccent,uGreen; uniform float uAspect; varying vec2 vUv; varying float vD;
+    float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+    float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+      return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+1.),f.x),f.y);}
+    void main(){
+      float a=texture2D(uAlpha,vUv).r; if(a<.04) discard;
+      vec3 col=texture2D(uDiffuse,vUv).rgb;
+      vec3 n=normalize(texture2D(uNormal,vUv).rgb*2.-1.);
+      vec3 L=normalize(vec3((uMouse.x-.5)*2.2,(uMouse.y-.5)*2.2,1.3));
+      float diff=clamp(dot(n,L),0.,1.);
+      vec3 lit=col*(.94+.1*diff)+uAccent*pow(1.-n.z,2.)*.08;
+      // halftone original
+      float lum=dot(col,vec3(.299,.587,.114));
+      vec2 g=vUv*vec2(uAspect*2.,2.)*60.; mat2 r=mat2(.707,-.707,.707,.707); vec2 gr=r*g;
+      float dotR=(1.-lum)*.62; float dots=1.-smoothstep(dotR-.08,dotR+.08,length(fract(gr)-.5));
+      vec3 ht=mix(uAccent,uGreen*.9,dots);
+      // contorno amarelo
+      float e=0.; for(int i=0;i<8;i++){float an=float(i)*.785; e+=texture2D(uAlpha,vUv+vec2(cos(an),sin(an))*.006).r;}
+      float edge=smoothstep(.2,.9,a)*(1.-smoothstep(5.,7.9,e));
+      ht=mix(ht,vec3(1.),edge);
+      vec4 ov=texture2D(uOverlay,vUv); ht=mix(ht,ov.rgb,ov.a);
+      // máscara do mouse com borda orgânica
+      vec2 dv=(vUv-uMouse)*vec2(uAspect*2.,2.); float wob=noise(vUv*7.+uTime*.6)*.07;
+      float m=1.-smoothstep(.3*uReveal+wob-.02,.3*uReveal+wob+.02,length(dv)*1.0);
+      float ring=smoothstep(.012,0.,abs(length(dv)-(.3*uReveal+wob)))*uReveal;
+      vec3 outc=mix(lit,ht,m); outc=mix(outc,uAccent,ring*.9);
+      float fade=smoothstep(.0,.22,vUv.y);
+      gl_FragColor=vec4(outc,smoothstep(.04,.5,a)*fade);
+    }`
+});
+const mesh = new THREE.Mesh(geo,mat);
+scene.add(mesh);
+
+let target = new THREE.Vector2(.5,.45), hovering=false, lastMove=0;
+const ray = new THREE.Raycaster(), ndc=new THREE.Vector2();
+function pointer(cx,cy){
+  const r=canvas.getBoundingClientRect(); ndc.set((cx-r.left)/r.width*2-1, -((cy-r.top)/r.height)*2+1);
+  ray.setFromCamera(ndc,camera); const hit=ray.intersectObject(mesh)[0];
+  if(hit){ target.copy(hit.uv); hovering=true; lastMove=performance.now(); } else hovering=false;
+}
+addEventListener('pointermove',e=>pointer(e.clientX,e.clientY),{passive:true});
+canvas.addEventListener('pointerleave',()=>hovering=false);
+
+function resize(){
+  const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(w,h,false);
+  camera.aspect=w/h; camera.updateProjectionMatrix();
+  const mobile = w<720; mesh.position.y = mobile? -.05 : -.08; mesh.scale.setScalar(mobile? Math.min(1, w/h*1.55) : 1);
+}
+addEventListener('resize',resize); resize();
+
+const tilt = new THREE.Vector2(); const clock=new THREE.Clock();
+function tick(){
+  const t=clock.getElapsedTime(); uni.uTime.value=t;
+  const idle = performance.now()-lastMove>2500;
+  if(idle){ target.set(.5+Math.sin(t*.7)*.22, .58+Math.sin(t*1.1)*.16); }
+  uni.uMouse.value.lerp(target,.08);
+  const want = (hovering||idle)?1:0; uni.uReveal.value += (want-uni.uReveal.value)*.06;
+  tilt.lerp(new THREE.Vector2((uni.uMouse.value.x-.5)*.35,(uni.uMouse.value.y-.5)*.25),.05);
+  mesh.rotation.y=tilt.x; mesh.rotation.x=-tilt.y;
+  const sy = scrollY/innerHeight; mesh.position.z = -sy*1.2; canvas.style.opacity = 1-Math.min(1,sy*1.1);
+  renderer.render(scene,camera); requestAnimationFrame(tick);
+}
+tick();
+
+/* ---------- retrato em retícula (seção ousadia) ---------- */
+const hc=document.getElementById('ht'), hx=hc.getContext('2d');
+const img=diffuse.image, msk=alpha.image;
+function drawHT(){
+  const W=hc.width=hc.clientWidth*Math.min(devicePixelRatio,2), H=hc.height=hc.clientHeight*Math.min(devicePixelRatio,2);
+  const off=document.createElement('canvas'), N=Math.round(W/10), M=Math.round(N*img.height/img.width); off.width=N; off.height=M;
+  const o=off.getContext('2d'); o.drawImage(img,0,0,N,M); const d=o.getImageData(0,0,N,M).data;
+  o.clearRect(0,0,N,M); o.drawImage(msk,0,0,N,M); const a=o.getImageData(0,0,N,M).data;
+  hx.fillStyle='#009c3b'; hx.fillRect(0,0,W,H); const cs=W/N; hx.fillStyle='#fedd00';
+  for(let j=0;j<M;j++) for(let i=0;i<N;i++){ const k=(j*N+i)*4; const al=a[k]/255;
+    const l=(d[k]*.299+d[k+1]*.587+d[k+2]*.114)/255; const r = al>.5 ? cs*.5*Math.sqrt(l)*1.05 : cs*.12;
+    hx.beginPath(); hx.arc(i*cs+cs/2,j*cs+cs/2,r,0,7); hx.fill(); }
+}
+drawHT(); addEventListener('resize',drawHT);
+</script>
+
+</body>
+</html>
